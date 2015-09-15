@@ -38,7 +38,33 @@ $(document).ready(function() {
       $("#show-movie-info").show();
       $("#tickets").show();
       $("#show-movie-info").append("<li>" + movie.showName() + "</li>" + "<br>" + movie.startTime + "<br>" + "$" + movie.ticketPrice);
+      $("form.ticket-number").submit(function(event) {
+        event.preventDefault();
 
+        var inputtedAmount = $(this).find("input.ticket-numbers").val();
+        var inputtedTicket = $("select#category").val();
+      
+        if (inputtedTicket === "senior") {
+          var ticketNumber = parseInt(inputtedAmount);
+          var total = movie.seniorTicketPrice();
+          var finalAmount = total * ticketNumber;
+          $("#ticket-price").text("Total Amount" + " $" + finalAmount);
+        }
+        else if (inputtedTicket === "kid") {
+          var ticketNumber = parseInt(inputtedAmount);
+          var total = movie.kidTicketPrice();
+          var finalAmount = total * ticketNumber;
+          $("#ticket-price").text("Total Amount" + " $" + finalAmount);
+        }
+        else if (inputtedTicket === "matinee") {
+          var ticketNumber = parseInt(inputtedAmount);
+          var total = movie.matineeTicketPrice();
+          var finalAmount = total * ticketNumber;
+          $("#ticket-price").text("Total Amount" + " $" + finalAmount);
+        }
+
+      });
     });
   });
+
 });
