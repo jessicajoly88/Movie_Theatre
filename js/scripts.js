@@ -7,3 +7,7 @@ function Movie(name, startTime) {
 Movie.prototype.seniorTicketPrice = function() {
   return this.ticketPrice - 2;
 }
+
+Movie.prototype.kidTicketPrice = function() {
+  return this.ticketPrice - 5;
+}
