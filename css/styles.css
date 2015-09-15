@@ -1,0 +1,8 @@
+#movies li {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+#movies li:hover {
+  text-decoration: underline;
+}

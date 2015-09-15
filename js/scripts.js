@@ -29,12 +29,12 @@ var newMovie5 = new Movie ("My Best Friend's Wedding","4pm");
 movieList.push(newMovie1, newMovie2, newMovie3, newMovie4, newMovie5);
 
 $(document).ready(function() {
-  // $("ul#movies").append("<li>" + newMovie1.name + "</li>" + "<li>" + newMovie2.name + "</li>");
   $("#show-movies").show();
   $("show-movies h2").text("")
   movieList.forEach(function(movie) {
-    $("ul#movies").append("<li>" + movie.showName() + "</li>")
+    $("ul#movies").append("<li class = 'movie'>" + movie.showName() + "</li>");
+    $(".movie").last().click(function() {
+      console.log(movie.showName());
+    });
   });
 });
-
-// var newmovie1 = new Movie ("Runaway Bride", "6pm")
