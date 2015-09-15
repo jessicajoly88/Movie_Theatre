@@ -11,3 +11,7 @@ Movie.prototype.seniorTicketPrice = function() {
 Movie.prototype.kidTicketPrice = function() {
   return this.ticketPrice - 5;
 }
+
+Movie.prototype.matineeTicketPrice = function() {
+  return this.ticketPrice -6;
+}

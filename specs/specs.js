@@ -19,5 +19,12 @@ describe('Movie', function() {
      expect(testMovie.startTime).to.equal("6pm");
      expect(testMovie.kidTicketPrice()).to.equal(5);
    });
-   
+
+   it("returns reduced movie price for matinee showing",function() {
+     var testMovie = new Movie("Dinner for Shmucks", "6pm");
+     expect(testMovie.name).to.equal("Dinner for Shmucks");
+     expect(testMovie.startTime).to.equal("6pm");
+     expect(testMovie.matineeTicketPrice()).to.equal(4);
+   });
+
 });
