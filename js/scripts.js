@@ -34,7 +34,8 @@ $(document).ready(function() {
   movieList.forEach(function(movie) {
     $("ul#movies").append("<li class = 'movie'>" + movie.showName() + "</li>");
     $(".movie").last().click(function() {
-      console.log(movie.showName());
+      $("#show-movie-info").show();
+      $("#show-movie-info").append("<li>" + movie.showName() + "</li>" + "<br>" + movie.startTime + "<br>" + "$" + movie.ticketPrice);
     });
   });
 });
