@@ -30,12 +30,15 @@ movieList.push(newMovie1, newMovie2, newMovie3, newMovie4, newMovie5);
 
 $(document).ready(function() {
   $("#show-movies").show();
-  $("show-movies h2").text("")
+  $("show-movies h2").text("");
+  $("#tickets").hide();
   movieList.forEach(function(movie) {
     $("ul#movies").append("<li class = 'movie'>" + movie.showName() + "</li>");
     $(".movie").last().click(function() {
       $("#show-movie-info").show();
+      $("#tickets").show();
       $("#show-movie-info").append("<li>" + movie.showName() + "</li>" + "<br>" + movie.startTime + "<br>" + "$" + movie.ticketPrice);
+
     });
   });
 });
