@@ -6,3 +6,11 @@
 #movies li:hover {
   text-decoration: underline;
 }
+
+#show-movie-info {
+  text-align: left;
+}
+
+.ticket-number {
+  margin-top: 15px;
+}

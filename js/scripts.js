@@ -36,14 +36,16 @@ $(document).ready(function() {
     $("ul#movies").append("<li class = 'movie'>" + movie.showName() + "</li>");
     $(".movie").last().click(function() {
       $("#show-movie-info").show();
+      $("#ticket-price").hide();
       $("#tickets").show();
-      $("#show-movie-info").append("<li>" + movie.showName() + "</li>" + "<br>" + movie.startTime + "<br>" + "$" + movie.ticketPrice);
+      $("#show-movie-info").append("<li>" + movie.showName() + "</li>" + movie.startTime + "<br>" + "$" + movie.ticketPrice);
       $("form.ticket-number").submit(function(event) {
         event.preventDefault();
+        $("#ticket-price").show();
 
         var inputtedAmount = $(this).find("input.ticket-numbers").val();
         var inputtedTicket = $("select#category").val();
-      
+
         if (inputtedTicket === "senior") {
           var ticketNumber = parseInt(inputtedAmount);
           var total = movie.seniorTicketPrice();
